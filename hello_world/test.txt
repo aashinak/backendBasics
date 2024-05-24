@@ -1,0 +1,7 @@
+function now() { [native code] } hey there 
+1716467614123 hey there 
+1716467665565 hey there 
+1716467667340 hey there 
+1716467668340 hey there 
+1716467669140 hey there 
+1716467669601 hey there 

@@ -1,0 +1,23 @@
+"dependencies": {
+    "express": "^4.19.2"
+  }
+
+
+  version ^4.19.2
+
+  2 -> minor fixes (optional) let say 4.19.5 will be latest
+
+  19 -> recommended bug fix (secure) 4.20.0 will be latest if realeased
+
+  4 -> major / breaking update 5 will be latest
+
+  
+
+  ^ -> automatically installs minor and recommended fixes but not major fixes
+
+  ~4.19.2  -> it wont install 4.20.0 and up, only 4.19.x
+
+
+  @@@@@@@@@@@@@@@@@@@
+  refer other symbols
+  @@@@@@@@@@@@@@@@@@@

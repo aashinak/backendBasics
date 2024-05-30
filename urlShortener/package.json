@@ -1,0 +1,22 @@
+{
+  "name": "urlshortener",
+  "version": "1.0.0",
+  "description": "url shortener service",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon index.js",
+    "start": "node index.js"
+  },
+  "author": "Aashin",
+  "license": "MIT",
+  "devDependencies": {
+    "nodemon": "^3.1.2"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "mongoose": "^8.4.0",
+    "nanoid": "^5.0.7"
+  }
+}

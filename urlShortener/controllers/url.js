@@ -6,13 +6,13 @@ const handleGenerateNewShortUrl = async (req, res) => {
     if(!body.url) return res.status(400).json({ error: "url is required"})
     
     const shortID = nanoid(8)
-    URL.create({
+   await URL.create({
         shortId: shortID,
         redirectUrl: body.url,
         visitHistory: []
     })
-
-    return res.status(201).json({ id: shortID })
+    return res.render('home', { id: shortID })
+    // return res.status(201).json({ id: shortID })
 }
 
 const handleRedirectRequest = async (req, res) => {

@@ -6,10 +6,13 @@ import path from 'path'
 import URL from './models/url.js'
 import staticRoute from './routes/staticRouter.js'
 import userRoute from './routes/user.js'
+import cookieParser from 'cookie-parser'
+import {checkAuth, restrictToLoggedinUserOnly} from './middlewares/auth.js'
 
 const app = express()
 app.use(express.json())
 app.use(express.urlencoded({extended: false}))
+app.use(cookieParser())
 
 app.set("view engine", "ejs")
 app.set("views", path.resolve("./views"))
@@ -20,10 +23,10 @@ connectToMongoDb("mongodb://127.0.0.1:27017/short-url")
 
 
 // url route
-app.use('/url', urlRoute)
-app.use('/', staticRoute)
+app.use('/url', restrictToLoggedinUserOnly, urlRoute) 
 app.use('/user', userRoute)
-app.get('/url/:shortId', handleRedirectRequest)
+app.use('/', checkAuth, staticRoute)
+app.get('/redi/:shortId', handleRedirectRequest)
 
 // server running
 const port = 3000
